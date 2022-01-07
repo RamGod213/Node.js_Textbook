@@ -3,6 +3,7 @@ const fs = require('fs').promises;
 const url = require('url');
 const qs = require('querystring');
 
+// 문자열을 자바스크립트 객체 형식으로 변환하는 함수
 const parseCookies = (cookie = '') =>
   cookie
     .split(';')
