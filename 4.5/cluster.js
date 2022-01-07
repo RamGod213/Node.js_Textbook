@@ -6,11 +6,11 @@ if (cluster.isMaster) {
   console.log(`마스터 프로세스 아이디: ${process.pid}`);
   // CPU 개수만큼 워커를 생산
   for (let i = 0; i < numCPUs; i += 1) {
-    cluster.fork();
+    cluster.fork();      
   }
   // 워커가 종료되었을 때
-  cluster.on('exit', (worker, code, signal) => {
-    console.log(`${worker.process.pid}번 워커가 종료되었습니다.`);
+  cluster.on('exit', (worker, code, signal) => {    
+    console.log(`${worker.process.pid}번 워커가 종료되었습니다.`);    
     console.log('code', code, 'signal', signal);
     cluster.fork();
   });
