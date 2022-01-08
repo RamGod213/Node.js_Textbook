@@ -17,9 +17,9 @@ const session = {};
 http.createServer(async (req, res) => {
   const cookies = parseCookies(req.headers.cookie);
   if (req.url.startsWith('/login')) {
-    const { query } = url.parse(req.url);
-    console.log( '쿼리가 뭔지? ', query);
-    const { name } = qs.parse(query);
+    const { query } = url.parse(req.url); // deprecated 됐음 (WHATWG 방식으로 가야함) 단, host 가 없는 url은 기존 nodejs url 방식으로만 됨.
+    console.log( '쿼리가 뭔지? ', query); 
+    const { name } = qs.parse(query); // deprecated 됐음 (WHATWG 방식으로 가야함) 단, host 가 없는 url은 기존 nodejs url 방식으로만 됨.
     console.log( '네임이 뭔지? ', name);
     const expires = new Date();
     expires.setMinutes(expires.getMinutes() + 5);
