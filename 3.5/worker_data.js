@@ -1,6 +1,4 @@
-const {
-  Worker, isMainThread, parentPort, workerData,
-} = require('worker_threads');
+const { Worker, isMainThread, parentPort, workerData, } = require('worker_threads');
 
 if (isMainThread) { // 부모일 때
   const threads = new Set();
