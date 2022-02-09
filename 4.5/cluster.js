@@ -8,6 +8,7 @@ if (cluster.isMaster) {
   for (let i = 0; i < numCPUs; i += 1) {
     cluster.fork();      
   }
+  
   // 워커가 종료되었을 때
   cluster.on('exit', (worker, code, signal) => {    
     console.log(`${worker.process.pid}번 워커가 종료되었습니다.`);    
