@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const readStream = fs.createReadStream('./readme3.txt', { highWaterMark: 16 });
+const readStream = fs.createReadStream('./3.6/readme3.txt', { highWaterMark: 16 });
 const data = [];
 
 readStream.on('data', (chunk) => {
@@ -10,6 +10,7 @@ readStream.on('data', (chunk) => {
 
 readStream.on('end', () => {
   console.log('end :', Buffer.concat(data).toString());
+  // console.log('end :', data.toString());
 });
 
 readStream.on('error', (err) => {

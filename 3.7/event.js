@@ -1,6 +1,7 @@
 const EventEmitter = require('events');
 
 const myEvent = new EventEmitter();
+
 myEvent.addListener('event1', () => {
   console.log('이벤트 1');
 });
@@ -29,8 +30,15 @@ myEvent.emit('event4'); // 실행 안 됨
 const listener = () => {
   console.log('이벤트 5');
 };
+
+const listener2 = () => {
+  console.log('이벤트 6');
+};
+
 myEvent.on('event5', listener);
+myEvent.on('event5', listener2);
+
 myEvent.removeListener('event5', listener);
 myEvent.emit('event5'); // 실행 안 됨
 
-console.log(myEvent.listenerCount('event2'));
+console.log(myEvent.listenerCount('event5'));

@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app_6-1"
+    "start": "nodemon app"
   },
   "author": "RamG",
   "license": "MIT",
