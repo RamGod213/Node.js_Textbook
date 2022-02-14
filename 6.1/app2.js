@@ -6,7 +6,7 @@ app.set('port', process.env.PORT || 3000);
 
 app.get('/', (req, res) => {
   // res.send('Hello, Express');  
-  res.sendFile(path.join(__dirname, '/index.html'));
+  res.sendFile(path.join(__dirname, '/index.html')); // 문자열 대신에 파일(html)로 응답하기.
 });
 
 app.listen(app.get('port'), () => {
